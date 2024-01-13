@@ -1,0 +1,19 @@
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.form input {
+    padding: 5px;
+    border-radius: 5px;
+    border-color: #94a9de;
+    width: 100%;
+    outline: none;
+}
+
+.form input:focus {
+    border-color: #355083;
+    outline: none;
+}
