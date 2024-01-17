@@ -1,11 +1,15 @@
 .form {
+    min-height: 50px;
+}
+
+.form_main {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
 }
 
-.form input {
+.form_main input {
     padding: 5px;
     border-radius: 5px;
     border-color: #94a9de;
@@ -15,5 +19,12 @@
 
 .form input:focus {
     border-color: #355083;
-    outline: none;
+}
+
+.form_main .input_error {
+    background-color: pink;
+}
+
+.error {
+    color: red;
 }

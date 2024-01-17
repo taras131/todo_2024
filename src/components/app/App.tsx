@@ -2,18 +2,19 @@ import React, {useState} from 'react';
 import Todo from "../todo/Todo";
 import {ITask} from "../../models/ITask";
 import styles from "./App.module.css"
+import {v1} from "uuid";
 
 const todoListTitle: string = "What to learn";
 const tasksData: ITask [] = [
-    {id: crypto.randomUUID(), title: "HTML&CSS", isDone: true},
-    {id: crypto.randomUUID(), title: "JS", isDone: true},
-    {id: crypto.randomUUID(), title: "React", isDone: false},
+    {id: v1(), title: "HTML&CSS", isDone: true},
+    {id: v1(), title: "JS", isDone: true},
+    {id: v1(), title: "React", isDone: false},
 ]
 
 function App() {
     const [tasks, setTasks] = useState<ITask []>(tasksData)
     const addTask = (newTask: ITask) => {
-        setTasks(prev => [...prev, newTask])
+        setTasks(prev => [newTask, ...prev])
     }
     const removeTask = (id: string) => () => {
         setTasks(prev => [...prev.filter(task => task.id !== id)])

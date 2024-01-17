@@ -17,7 +17,7 @@
 }
 
 .button:disabled {
-    cursor: none;
+    cursor: default;
     opacity: 0.4;
     box-shadow: none !important;
 }

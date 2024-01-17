@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import styles from "./Button.module.css"
 
 type PropsType = {
-    handleClick: () => void
+    handleClick?: () => void
     isActive?: boolean
     isDisabled?: boolean
     children: React.ReactNode
