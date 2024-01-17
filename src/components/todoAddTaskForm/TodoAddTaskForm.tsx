@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, useState} from 'react';
 import Button from "../button/Button";
 import {ITask} from "../../models/ITask";
 import {v1} from "uuid";
@@ -16,11 +16,11 @@ const TodoAddTaskForm: FC<PropsType> = ({addTask}) => {
         setInputValue(e.target.value)
     }
     const validateInput = () => {
-        if (inputValue.length < 3) {
+        if (inputValue.trim().length < 3) {
             setError("не менее 3 символов")
             return false;
         }
-        if (inputValue.length > 15) {
+        if (inputValue.trim().length > 15) {
             setError("не более 15 символов")
             return false;
         }
@@ -32,7 +32,7 @@ const TodoAddTaskForm: FC<PropsType> = ({addTask}) => {
         if (validateInput()) {
             addTask({
                 id: v1(),
-                title: inputValue,
+                title: inputValue.trim(),
                 isDone: false,
             });
             setInputValue("");
